@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Melatii 🎂</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- SCREEN 1 -->
+  <div class="screen active" id="screen-1">
+    <div class="pixel-stars" id="stars-1"></div>
+    <div class="floating-pixels" id="floats-1"></div>
+    <div class="screen-content center-content">
+      <div class="pixel-frame opening-frame">
+        <div class="pixel-heart-row">
+          <span class="pixel-heart">♥</span><span class="pixel-heart">♥</span><span class="pixel-heart">♥</span>
+        </div>
+        <h1 class="title-text glitch-text">Hi Melatii Canntikk,</h1>
+        <p class="subtitle-text">Akhirnyaa hari ini dateng juga.</p>
+        <p class="subtitle-text accent">Happy birthday sayangg 🎂</p>
+        <p class="body-text">aku punya hadiah kecil buat kamu, sebagai cara aku bilang kalau aku bersyukur udah ketemu kamu</p>
+        <div class="pixel-heart-row">
+          <span class="pixel-heart">♥</span><span class="pixel-heart">♥</span><span class="pixel-heart">♥</span>
+        </div>
+      </div>
+      <button class="pixel-btn" onclick="goTo(2)">
+        <span class="btn-bar"></span><span class="btn-label">NEXT ▶</span><span class="btn-bar"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- SCREEN 2 -->
+  <div class="screen" id="screen-2">
+    <div class="pixel-stars" id="stars-2"></div>
+    <div class="screen-content center-content">
+      <p class="hint-text">Ada sesuatu buat kamuu...</p>
+      <div class="gift-wrapper" id="gift-wrapper">
+        <div class="gift-box" id="gift-box">
+          <div class="gift-lid" id="gift-lid"><div class="lid-ribbon"></div></div>
+          <div class="gift-body">
+            <div class="body-ribbon-v"></div>
+            <div class="body-ribbon-h"></div>
+            <div class="body-ribbon-bow"><div class="bow-left"></div><div class="bow-right"></div></div>
+          </div>
+        </div>
+      </div>
+      <button class="pixel-btn open-btn" id="open-btn" onclick="openGift()">
+        <span class="btn-bar"></span><span class="btn-label">OPEN 🎁</span><span class="btn-bar"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- SCREEN 3 -->
+  <div class="screen" id="screen-3">
+    <div class="fireworks-container" id="fireworks"></div>
+    <div class="screen-content center-content">
+      <div class="mascot-reveal">
+  <p class="mascot-text bounce-text">✨ SURPRISE, SAYANGG! ✨</p>
+  <p class="mascot-sub">Happy Birthday, sayangg ❤️ 🎂</p>
+  <div class="cake-scene">
+    <img src="maskot1.png" alt="Mbekk" class="mascot-img" />
+    <div class="cake-wrap">
+      <canvas id="cake-canvas" width="120" height="90"></canvas>
+      <div class="candles" id="candles">
+        <div class="candle"><div class="flame" id="flame-1"></div></div>
+        <div class="candle"><div class="flame" id="flame-2"></div></div>
+        <div class="candle"><div class="flame" id="flame-3"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+<button class="pixel-btn" id="blow-btn" onclick="blowCandles()">
+  <span class="btn-bar"></span><span class="btn-label">TIUP LILIN 🌬️</span><span class="btn-bar"></span>
+</button>
+    </div>
+  </div>
+
+  <!-- SCREEN 4 -->
+  <div class="screen" id="screen-4">
+    <nav class="pixel-navbar">
+      <div class="nav-mascot" onclick="goTo(1)" style="cursor:pointer;">
+  <img src="maskot1.png" alt="Mbekk" class="nav-mascot-img" />
+</div>
+      <div class="nav-links">
+        <button class="nav-btn active-nav" onclick="showSection('memories', event)">📷 Memories</button>
+        <button class="nav-btn" onclick="showSection('poem', event)">📜 Poem</button>
+        <button class="nav-btn" onclick="showSection('melody', event)">🎵 Melody</button>
+      </div>
+    </nav>
+
+    <!-- Memories -->
+    <div class="section active-section" id="section-memories">
+      <div class="section-title">
+        <span class="pixel-decoration">★</span> Our Memories <span class="pixel-decoration">★</span>
+      </div>
+      <div class="heart-grid-wrapper">
+        <div class="heart-grid" id="heart-grid"></div>
+      </div>
+    </div>
+
+    <!-- Poem -->
+    <div class="section" id="section-poem">
+      <div class="section-title">
+        <span class="pixel-decoration">♥</span> A Poem For You <span class="pixel-decoration">♥</span>
+      </div>
+      <div class="poem-paper">
+        <div class="poem-content">
+          <h3 class="poem-title">Melati</h3>
+  <pre class="poem-text">
+pada dasarnya 
+manusia bukan dewasa
+usia pun bukan penentunya
+pengalaman yang menggerusnya
+dari batu hingga bubur 
+dari bibit jadi kencur
+
+usai berat tiba kemudahan
+usai hancur akan ada pertolongan
+selalu ada jalan di tempat gelap sekalipun 
+
+merunduk lah serunduk-runduknya 
+agar padi pun kalah pendeknya 
+dan mekarlah semerbak-merbaknya 
+mengalahkan indahnya sang Surya
+
+hari ini usiamu kembali bertambah
+semoga semesta lebih ramah
+padamu yang belum memilih menyerah
+
+tumbuhlah perlahan,
+tak ada bunga yang mekar dalam satu malam
+  </pre>
+</div>
+      </div>
+    </div>
+
+    <!-- Melody -->
+    <div class="section" id="section-melody">
+      <div class="section-title">
+        <span class="pixel-decoration">♪</span> Our Melody <span class="pixel-decoration">♪</span>
+      </div>
+      <div class="melody-container">
+        <div class="spotify-frame">
+          <div class="spotify-placeholder">
+            <p class="spotify-hint">[ Blue Melody ]</p>
+            <img src="spotify.jpeg" alt="Spotify Playlist" style="width:200px; height:230px;">
+            <p class="spotify-sub">Scan to hear my special playlist just for youu ♪</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Photo Detail Overlay -->
+    <div class="photo-detail" id="photo-detail">
+      <button class="detail-back" onclick="closeDetail()">← BACK</button>
+      <div class="detail-inner">
+        <div class="detail-img-wrap">
+          <img src="" alt="" id="detail-img" class="detail-img" />
+        </div>
+        <div class="detail-info">
+          <h2 class="detail-title" id="detail-title"></h2>
+          <p class="detail-desc" id="detail-desc"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
