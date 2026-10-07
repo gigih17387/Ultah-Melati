@@ -60,7 +60,7 @@ function initFloats() {
   if (!container) return;
   container.innerHTML = '';
   const shapes = ['♥','★','✦','◆','▲'];
-  const colors = ['#a8d4f5','#ff8fb5','#ffe66d','#7ef7b0','#5ba3d9'];
+  const colors = ['#d9a0c0','#f3a6c0','#f6dfd3','#cda8d1','#8b4a9b'];
   for (let i = 0; i < 18; i++) {
     const p = document.createElement('div');
     p.className = 'floating-pixel';
@@ -103,12 +103,12 @@ function drawMascot(canvasId, w, h) {
 
   // Warna Moondy
   const _  = null;
-  const W_ = '#f0f8ff';  // putih wajah & telinga kiri
-  const B  = '#4a90be';  // biru border & telinga kanan
-  const Bl = '#7abfde';  // biru muda highlight
-  const K  = '#2a5a7a';  // biru gelap outline
-  const Pk = '#daeef8';  // putih-biru telinga kiri
-  const Ey = '#3a7aaa';  // mata biru tipis
+  const W_ = '#fff8f5';  // putih wajah & telinga kiri
+  const B  = '#7b3f87';  // biru border & telinga kanan
+  const Bl = '#b978a9';  // biru muda highlight
+  const K  = '#28152f';  // biru gelap outline
+  const Pk = '#ead7e8';  // putih-biru telinga kiri
+  const Ey = '#9d5b91';  // mata biru tipis
 
   // Grid 24×28 — Moondy
   const grid = [
@@ -166,7 +166,7 @@ function startFireworks() {
   container.innerHTML = '';
 
   function launchOne() {
-    const colors = ['#ffe66d','#ff8fb5','#7ef7b0','#a8d4f5','#ff6b6b','#ffffff'];
+    const colors = ['#f6dfd3','#f3a6c0','#cda8d1','#d9a0c0','#d97d9f','#ffffff'];
     const x = 10 + Math.random() * 80;
     const y = 10 + Math.random() * 60;
 
@@ -367,8 +367,8 @@ function drawCake() {
   const COLS = 24, ROWS = 18;
   const sx = canvas.width / COLS;
   const sy = canvas.height / ROWS;
-  const _ = null, W = '#f0f8ff', B = '#2b7fc1', Bl = '#5ba3d9';
-  const P = '#ff8fb5', Y = '#ffe66d', K = '#1a4f7a';
+  const _ = null, W = '#fff8f5', B = '#5d2a73', Bl = '#8b4a9b';
+  const P = '#f3a6c0', Y = '#f6dfd3', K = '#28152f';
   const g = [
     [_,_,_,_,_,W,W,W,W,W,W,W,W,W,W,W,W,W,W,_,_,_,_,_],
     [_,_,_,_,W,W,P,W,W,P,W,W,P,W,W,P,W,W,W,W,_,_,_,_],

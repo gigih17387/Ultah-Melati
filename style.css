@@ -3,23 +3,23 @@
    Theme: Pixel Art | Blue Nuance
    ============================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600;1,700&family=DM+Sans:wght@400;500;600&display=swap');
 
 /* ── CSS Variables ─────────────────────────── */
 :root {
-  --blue-lightest: #e8f4ff;
-  --blue-light:    #a8d4f5;
-  --blue-mid:      #5ba3d9;
-  --blue-main:     #2b7fc1;
-  --blue-dark:     #1a4f7a;
-  --blue-darker:   #0d2d4a;
-  --white:         #f0f8ff;
-  --accent-pink:   #ff8fb5;
-  --accent-yellow: #ffe66d;
-  --accent-green:  #7ef7b0;
-  --pixel-border:  3px solid var(--blue-dark);
-  --font-pixel:    'Press Start 2P', monospace;
-  --font-big:      'VT323', monospace;
+  --blue-lightest: #fff7f3;
+  --blue-light:    #ead7e8;
+  --blue-mid:      #8b4a9b;
+  --blue-main:     #5d2a73;
+  --blue-dark:     #28152f;
+  --blue-darker:   #08050c;
+  --white:         #fff8f5;
+  --accent-pink:   #f3a6c0;
+  --accent-yellow: #f8dfd2;
+  --accent-green:  #cda8d1;
+  --pixel-border:  1px solid rgba(255,235,244,.20);
+  --font-pixel:    'Cormorant Garamond', Georgia, serif;
+  --font-big:      'DM Sans', Arial, sans-serif;
 }
 
 /* ── Reset & Base ──────────────────────────── */
@@ -28,9 +28,9 @@
 html, body {
   width: 100%; height: 100%;
   overflow: hidden;
-  background: var(--blue-darker);
-  font-family: var(--font-pixel);
-  image-rendering: pixelated;
+  background: #08050c;
+  font-family: var(--font-big);
+  image-rendering: auto;
 }
 
 /* ── Screen System ─────────────────────────── */
@@ -72,110 +72,324 @@ html, body {
   50%       { opacity: 0.2; }
 }
 
-/* ── Screen 1: Opening ─────────────────────── */
-.pixel-frame {
-  background: rgba(11, 45, 74, 0.85);
-  border: 4px solid var(--blue-light);
-  box-shadow: 0 0 0 2px var(--blue-dark), 8px 8px 0 var(--blue-darker);
-  padding: 32px 28px;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:wght@400;500;600&display=swap');
+
+:root {
+  --cream: #f7edf5;
+  --soft-white: #eee5ef;
+  --pink: #e7a6c2;
+  --pink-light: #f1bfd5;
+  --purple: #9f78ad;
+  --glass: rgba(52, 37, 54, 0.68);
+  --border: rgba(231, 220, 235, 0.42);
+}
+
+/* background */
+html,
+body {
+  margin: 0;
   width: 100%;
-  max-width: 520px;
-  image-rendering: pixelated;
+  height: 100%;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(115, 70, 125, 0.25) 0%,
+      rgba(36, 22, 39, 0.45) 38%,
+      rgba(12, 8, 14, 0.96) 100%
+    ),
+    #100b12;
+
+  font-family: "DM Sans", sans-serif;
 }
 
-.pixel-heart-row {
+/* screen */
+#screen-1 {
+  position: fixed;
+  inset: 0;
+
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 12px;
-  margin: 12px 0;
-}
-.pixel-heart {
-  color: var(--accent-pink);
-  font-size: 20px;
-  animation: heartbeat 1.2s infinite;
-  display: inline-block;
-}
-.pixel-heart:nth-child(2) { animation-delay: 0.2s; }
-.pixel-heart:nth-child(3) { animation-delay: 0.4s; }
-@keyframes heartbeat {
-  0%, 100% { transform: scale(1); }
-  50%       { transform: scale(1.3); }
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(120, 73, 132, 0.16),
+      transparent 48%
+    ),
+    linear-gradient(
+      145deg,
+      #120c14 0%,
+      #241823 48%,
+      #100a11 100%
+    );
+
+  overflow: hidden;
 }
 
-.title-text {
-  font-family: var(--font-pixel);
-  font-size: clamp(10px, 2.5vw, 16px);
-  color: var(--accent-yellow);
-  line-height: 1.8;
-  margin: 12px 0 8px;
-  text-shadow: 2px 2px 0 var(--blue-darker);
-}
-
-.subtitle-text {
-  font-family: var(--font-big);
-  font-size: clamp(20px, 4vw, 28px);
-  color: var(--blue-light);
-  line-height: 1.4;
-}
-.subtitle-text.accent { color: var(--accent-pink); }
-
-.body-text {
-  font-family: var(--font-big);
-  font-size: clamp(18px, 3.5vw, 24px);
-  color: var(--white);
-  margin-top: 8px;
-}
-
-/* Glitch animation */
-.glitch-text {
+/* container */
+#screen-1 .screen-content {
   position: relative;
-  animation: glitch 4s infinite;
-}
-@keyframes glitch {
-  0%, 90%, 100% { text-shadow: 2px 2px 0 var(--blue-darker); }
-  92%  { text-shadow: -3px 0 var(--accent-pink), 3px 0 var(--blue-mid); }
-  94%  { text-shadow: 3px 0 var(--accent-pink), -3px 0 var(--blue-mid); }
-  96%  { text-shadow: 2px 2px 0 var(--blue-darker); }
-}
+  z-index: 10;
 
-/* ── Pixel Button ──────────────────────────── */
-.pixel-btn {
+  width: 100%;
+  max-width: 900px;
+
+  padding: 30px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
-  background: none;
+  justify-content: center;
+
+  gap: 22px;
+}
+
+/* CARD — bentuknya dibuat seperti screenshot */
+#screen-1 .pixel-frame {
+  width: min(770px, 88vw);
+  min-height: 270px;
+
+  padding: 32px 38px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(71, 52, 72, 0.70),
+      rgba(42, 31, 44, 0.72)
+    );
+
+  border: 2px solid var(--border);
+  border-radius: 15px;
+
+  box-shadow:
+    0 0 30px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* hearts atas bawah */
+#screen-1 .pixel-heart-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 3px;
+  margin: 4px 0 8px;
+}
+
+#screen-1 .pixel-heart {
+  color: var(--pink-light);
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+
+  text-shadow:
+    0 0 8px rgba(231,166,194,0.55);
+
+  animation: softHeart 1.8s ease-in-out infinite;
+}
+
+#screen-1 .pixel-heart:nth-child(2) {
+  animation-delay: .2s;
+}
+
+#screen-1 .pixel-heart:nth-child(3) {
+  animation-delay: .4s;
+}
+
+@keyframes softHeart {
+  0%, 100% {
+    opacity: .75;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+/* JUDUL */
+#screen-1 .title-text {
+  margin: 3px 0 0;
+
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-weight: 600;
+
+  font-size: clamp(40px, 5vw, 57px);
+  line-height: 1;
+
+  color: var(--cream);
+
+  letter-spacing: -0.5px;
+
+  text-shadow:
+    0 2px 12px rgba(231,166,194,0.16);
+}
+
+/* subtitle pertama */
+#screen-1 .subtitle-text {
+  margin: 3px 0;
+
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+
+  font-size: clamp(22px, 3vw, 30px);
+  line-height: 1.15;
+
+  color: var(--soft-white);
+}
+
+/* Happy birthday */
+#screen-1 .subtitle-text.accent {
+  margin-top: 12px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-weight: 600;
+
+  font-size: clamp(27px, 3.4vw, 36px);
+
+  color: var(--pink-light);
+
+  text-shadow:
+    0 0 14px rgba(231,166,194,0.28);
+}
+
+/* body text */
+#screen-1 .body-text {
+  max-width: 700px;
+
+  margin: 0;
+
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+
+  font-size: clamp(14px, 1.5vw, 18px);
+  line-height: 1.5;
+
+  color: #e9dfe9;
+}
+
+/* BUTTON */
+#screen-1 .pixel-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 5px;
+
+  background: transparent;
   border: none;
+
   cursor: pointer;
-  padding: 0;
-  transition: transform 0.1s;
-}
-.pixel-btn:active { transform: scale(0.95); }
 
-.btn-bar {
-  display: block;
-  width: 160px;
-  height: 4px;
-  background: var(--blue-light);
-  box-shadow: 0 2px 0 var(--blue-dark);
+  transition:
+    transform .2s ease,
+    filter .2s ease;
 }
 
-.btn-label {
-  font-family: var(--font-pixel);
-  font-size: clamp(9px, 2vw, 12px);
-  color: var(--white);
-  background: var(--blue-main);
-  border: 3px solid var(--blue-light);
-  box-shadow: 4px 4px 0 var(--blue-darker);
-  padding: 10px 28px;
-  letter-spacing: 2px;
-  transition: background 0.15s, color 0.15s;
-  image-rendering: pixelated;
+#screen-1 .pixel-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.12);
 }
-.pixel-btn:hover .btn-label {
-  background: var(--blue-light);
-  color: var(--blue-darker);
+
+/* garis button */
+#screen-1 .btn-bar {
+  display: none;
+}
+
+/* button */
+#screen-1 .btn-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 145px;
+
+  padding: 11px 24px;
+
+  border-radius: 25px;
+
+  border: 1px solid rgba(242, 197, 218, 0.65);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(207, 128, 166, 0.9),
+      rgba(157, 100, 143, 0.9)
+    );
+
+  box-shadow:
+    0 5px 20px rgba(150, 80, 130, 0.25),
+    inset 0 1px 0 rgba(255,255,255,.2);
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+
+  color: #fff5fb;
+
+  letter-spacing: .2px;
+}
+
+/* stars */
+#screen-1 .pixel-stars {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+}
+
+#screen-1 .star {
+  background: #f7eaf5;
+
+  box-shadow:
+    0 0 5px rgba(255,235,250,.8);
+
+  opacity: .8;
+}
+
+/* floating particles */
+#screen-1 .floating-pixel {
+  opacity: .25;
+}
+
+/* responsive */
+@media (max-width: 600px) {
+
+  #screen-1 .pixel-frame {
+    width: 86vw;
+    padding: 28px 20px;
+  }
+
+  #screen-1 .title-text {
+    font-size: 38px;
+  }
+
+  #screen-1 .subtitle-text {
+    font-size: 22px;
+  }
+
+  #screen-1 .subtitle-text.accent {
+    font-size: 27px;
+  }
+
+  #screen-1 .body-text {
+    font-size: 14px;
+  }
 }
 
 /* ── Screen 2: Gift Box ────────────────────── */
@@ -774,4 +988,305 @@ html, body {
 @keyframes smokeUp {
   0%   { transform: translateY(0) scale(1); opacity: 0.7; }
   100% { transform: translateY(-24px) scale(2.5); opacity: 0; }
+}
+
+/* =========================================================
+   VIDEO-INSPIRED PURPLE / BLACK ROMANTIC THEME
+   Visual styling only — HTML content and JS behavior stay intact.
+   ========================================================= */
+
+html, body {
+  color: #fff7f5;
+}
+
+.screen {
+  background:
+    radial-gradient(circle at 50% 18%, rgba(177, 63, 185, .20), transparent 28%),
+    radial-gradient(circle at 15% 75%, rgba(94, 24, 119, .22), transparent 32%),
+    radial-gradient(circle at 88% 80%, rgba(206, 93, 147, .10), transparent 28%),
+    linear-gradient(145deg, #07050b 0%, #160b1d 42%, #09070d 100%);
+}
+
+.screen::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at center, rgba(255, 170, 206, .06), transparent 52%);
+  z-index: 0;
+}
+
+.screen-content { z-index: 2; }
+
+.pixel-stars .star {
+  background: #fff5f7;
+  border-radius: 50%;
+  box-shadow: 0 0 7px rgba(255, 220, 239, .75);
+}
+
+.pixel-frame {
+  background: rgba(255, 246, 250, .065);
+  border: 1px solid rgba(255, 225, 239, .24);
+  border-radius: 14px;
+  box-shadow:
+    0 24px 70px rgba(0,0,0,.48),
+    inset 0 1px 0 rgba(255,255,255,.08),
+    0 0 40px rgba(126, 41, 139, .10);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  image-rendering: auto;
+}
+
+.title-text,
+.section-title,
+.poem-title,
+.detail-title,
+.mascot-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: .2px;
+  color: #fff7f5;
+  text-shadow: 0 4px 24px rgba(244, 151, 190, .22);
+}
+
+.title-text {
+  font-size: clamp(30px, 5vw, 48px);
+  line-height: 1.05;
+}
+
+.subtitle-text,
+.body-text,
+.detail-desc,
+.poem-placeholder,
+.poem-placeholder-sub,
+.spotify-sub,
+.nav-btn,
+.detail-back,
+.btn-label,
+.hint-text,
+.spotify-hint,
+.poem-text {
+  font-family: 'DM Sans', Arial, sans-serif;
+}
+
+.subtitle-text { color: rgba(255,247,245,.82); }
+.subtitle-text.accent,
+.pixel-decoration,
+.pixel-heart,
+.mascot-sub,
+.spotify-sub { color: #f3a6c0; }
+.body-text { color: rgba(255,247,245,.70); }
+
+.pixel-heart { text-shadow: 0 0 16px rgba(243,166,192,.65); }
+
+/* Elegant button — same DOM and click behavior */
+.pixel-btn { gap: 5px; }
+.btn-bar {
+  width: 72px;
+  height: 1px;
+  background: rgba(234,215,232,.55);
+  box-shadow: none;
+}
+.btn-label {
+  color: #fff8f7;
+  background: linear-gradient(135deg, #e99ab8 0%, #b45b91 100%);
+  border: 1px solid rgba(255,235,243,.34);
+  border-radius: 999px;
+  box-shadow: 0 9px 28px rgba(185, 76, 135, .25), inset 0 1px 0 rgba(255,255,255,.20);
+  padding: 10px 28px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+}
+.pixel-btn:hover .btn-label {
+  background: linear-gradient(135deg, #f2b0c9 0%, #c86ca0 100%);
+  color: #fff;
+}
+
+/* Gift — purple/pink instead of blue */
+.gift-lid {
+  background: linear-gradient(135deg, #704083, #4a205d);
+  border-color: #120a17;
+  box-shadow: inset -4px -4px 0 rgba(0,0,0,.22), 4px 4px 0 #08050c;
+}
+.gift-body {
+  background: linear-gradient(135deg, #9b5a9d, #5d2a73);
+  border-color: #120a17;
+  box-shadow: inset -6px -6px 0 rgba(0,0,0,.20), 4px 4px 0 #08050c;
+}
+.lid-ribbon,
+.body-ribbon-v,
+.body-ribbon-h,
+.bow-left,
+.bow-right {
+  background: #f3a6c0;
+  border-color: #35162f;
+}
+.hint-text { color: #ead7e8; letter-spacing: 2px; }
+
+/* Mascot + cake glow */
+.mascot-img { filter: drop-shadow(0 10px 26px rgba(192, 79, 154, .38)); image-rendering: auto; }
+.nav-mascot-img { image-rendering: auto; }
+.mascot-sub { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 600; }
+
+/* Navbar */
+.pixel-navbar {
+  background: rgba(8,5,12,.88);
+  border-bottom: 1px solid rgba(243, 205, 225, .20);
+  box-shadow: 0 8px 30px rgba(0,0,0,.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.nav-btn {
+  color: rgba(255,235,244,.72);
+  background: rgba(255,255,255,.025);
+  border: 1px solid rgba(243, 205, 225, .18);
+  border-radius: 999px;
+  letter-spacing: .5px;
+  image-rendering: auto;
+}
+.nav-btn:hover,
+.nav-btn.active-nav {
+  background: rgba(185, 88, 151, .22);
+  color: #fff7f7;
+  border-color: rgba(243,166,192,.45);
+  box-shadow: 0 0 20px rgba(185,88,151,.12);
+}
+
+/* Main section */
+.section-title {
+  color: #fff7f5;
+  text-shadow: 0 4px 24px rgba(244,151,190,.20);
+}
+
+/* Memory photos — polaroid-like frame, positions untouched */
+.hcell {
+  background: #f7f1ef;
+  border: 5px solid #f7f1ef;
+  box-shadow: 0 10px 28px rgba(0,0,0,.48), 0 0 0 1px rgba(255,255,255,.14);
+  border-radius: 1px;
+}
+.hcell:hover {
+  box-shadow: 0 14px 34px rgba(0,0,0,.55), 0 0 20px rgba(229,139,181,.18);
+}
+.hcell img { image-rendering: auto; }
+.hcell .hplaceholder {
+  background: linear-gradient(135deg, #25102e 0%, #5d2a73 100%);
+}
+.hplaceholder .hnum { color: #ead7e8; }
+
+/* Photo detail */
+.photo-detail {
+  background:
+    radial-gradient(circle at 50% 20%, rgba(177,63,185,.16), transparent 30%),
+    linear-gradient(145deg, #07050b 0%, #160b1d 55%, #09070d 100%);
+}
+.detail-back {
+  color: #ead7e8;
+  background: rgba(255,255,255,.035);
+  border: 1px solid rgba(243,205,225,.24);
+  border-radius: 999px;
+}
+.detail-back:hover { background: rgba(185,88,151,.22); color: #fff; }
+.detail-img-wrap {
+  border: 5px solid #f7f1ef;
+  box-shadow: 0 14px 36px rgba(0,0,0,.50);
+  border-radius: 2px;
+}
+.detail-img-wrap.empty { background: linear-gradient(135deg, #25102e, #5d2a73); }
+.detail-title { color: #fff7f5; }
+.detail-desc { color: rgba(255,247,245,.78); }
+
+/* Poem — dark translucent card like the reference */
+.poem-paper {
+  background: rgba(255,247,249,.065);
+  border: 1px solid rgba(255,225,239,.22);
+  border-radius: 12px;
+  box-shadow: 0 20px 55px rgba(0,0,0,.42), inset 0 1px 0 rgba(255,255,255,.07);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.poem-text { color: rgba(255,247,245,.78); }
+.poem-title { color: #fff7f5; }
+.poem-line-deco { background: rgba(243,166,192,.13); }
+.poem-placeholder { color: rgba(255,247,245,.78); }
+.poem-placeholder-sub { color: #c999b5; }
+
+/* Melody */
+.spotify-frame {
+  background: rgba(255,247,249,.055);
+  border: 1px solid rgba(255,225,239,.22);
+  border-radius: 12px;
+  box-shadow: 0 18px 50px rgba(0,0,0,.42), inset 0 1px 0 rgba(255,255,255,.07);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.spotify-hint { color: #ead7e8; letter-spacing: 2px; }
+.spotify-sub { color: #f3a6c0; }
+
+/* Scrollbars */
+.section::-webkit-scrollbar { width: 6px; }
+.section::-webkit-scrollbar-track { background: #08050c; }
+.section::-webkit-scrollbar-thumb {
+  background: #6d397c;
+  border: 1px solid #08050c;
+  border-radius: 999px;
+}
+
+/* Floating particles */
+.floating-pixel { text-shadow: 0 0 12px rgba(243,166,192,.45); }
+
+/* Cake / candle colors */
+.candle::after {
+  background: linear-gradient(180deg, #f6d9e5 0%, #e58fb2 100%);
+  border-color: #35162f;
+}
+.flame {
+  background: radial-gradient(ellipse at 50% 80%, #fff 0%, #ffd8e8 35%, #e98ab0 72%, transparent 100%);
+}
+
+@media (max-width: 480px) {
+  .pixel-frame { border-radius: 12px; }
+  .poem-paper { border-radius: 10px; }
+}
+/* 1. Izinkan scroll global biar kalau foto membesar tetap bisa di-scroll rapi */
+html, body {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+/* 2. Amankan Navbar biar posisinya selalu melayang aman di paling atas */
+.pixel-navbar {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 9999 !important;
+}
+
+/* 3. Atur area Section Memories */
+#section-memories {
+  width: 100% !important;
+  min-height: 100vh !important;
+  height: auto !important;
+  overflow-y: visible !important;
+  overflow-x: hidden !important;
+  padding-top: 40px !important;
+  padding-bottom: 80px !important;
+}
+
+.heart-grid-wrapper {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  overflow: visible !important;
+  padding: 0 !important;
+}
+
+/* 4. Fix Grid Foto: Pembesaran berfokus dari atas ke bawah (Top Center) */
+#heart-grid {
+  transform: scale(0.3) !important; /* Lu bisa ubah ukurannya di sini (misal 1.1, 1.3, dst) */
+  transform-origin: top center !important; /* PENTING: Bikin perbesaran mulai dari bawah judul */
+  margin-top: 20px !important; /* Jarak aman biar gak nabrak/menutupi menu diatasnya */
+  margin-bottom: 120px !important; /* Jarak aman bawah biar gak kepotong */
+  overflow: visible !important;
 }
