@@ -1512,3 +1512,71 @@ html, body {
     flex-shrink: 0 !important;
   }
 }
+/* =========================================================
+   FIX SCREEN AWAL - LANDSCAPE
+   ========================================================= */
+
+@media (orientation: landscape) {
+
+  #screen-1 {
+    align-items: center !important;
+    justify-content: center !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  #screen-1 .screen-content {
+    width: 100% !important;
+    max-width: 1000px !important;
+
+    padding: 10px 20px !important;
+
+    gap: 10px !important;
+  }
+
+  #screen-1 .pixel-frame {
+    width: min(770px, 90vw) !important;
+
+    /* INI YANG PALING PENTING */
+    min-height: 0 !important;
+
+    padding: 16px 28px !important;
+  }
+
+  #screen-1 .pixel-heart-row {
+    margin: 2px 0 5px !important;
+  }
+
+  #screen-1 .pixel-heart {
+    font-size: 11px !important;
+  }
+
+  #screen-1 .title-text {
+    font-size: clamp(28px, 6vh, 43px) !important;
+    margin: 2px 0 !important;
+  }
+
+  #screen-1 .subtitle-text {
+    font-size: clamp(17px, 4vh, 25px) !important;
+    margin: 2px 0 !important;
+  }
+
+  #screen-1 .subtitle-text.accent {
+    font-size: clamp(21px, 4.5vh, 30px) !important;
+    margin-top: 5px !important;
+  }
+
+  #screen-1 .body-text {
+    font-size: clamp(12px, 2.7vh, 16px) !important;
+    line-height: 1.35 !important;
+  }
+
+  #screen-1 .pixel-btn {
+    flex-shrink: 0 !important;
+  }
+
+  #screen-1 .btn-label {
+    padding: 8px 22px !important;
+    font-size: 12px !important;
+  }
+}
