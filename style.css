@@ -1455,3 +1455,60 @@ html, body {
     padding: 0 8px !important;
   }
 }
+/* =====================================================
+   FIX DESKTOP PORTRAIT ONLY
+   HP & DESKTOP LANDSCAPE TIDAK DISENTUH
+   ===================================================== */
+
+@media (min-width: 601px) and (orientation: portrait) {
+
+  /* biar screen utama nggak motong isi */
+  #screen-4 {
+    overflow: hidden !important;
+    height: 100dvh !important;
+  }
+
+  /* area memories punya tinggi sendiri dan bisa scroll */
+  #section-memories {
+    min-height: 0 !important;
+    height: calc(100dvh - 65px) !important;
+
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    padding-top: 35px !important;
+    padding-bottom: 80px !important;
+
+    box-sizing: border-box !important;
+  }
+
+  /* wrapper grid */
+  #section-memories .heart-grid-wrapper {
+    width: 100% !important;
+
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+
+    overflow: visible !important;
+
+    padding: 0 0 100px !important;
+
+    flex-shrink: 0 !important;
+  }
+
+  /*
+     grid tetap pakai ukuran yang sekarang,
+     tapi posisinya diturunkan sedikit supaya
+     bagian atas hati nggak masuk ke navbar
+  */
+  #section-memories #heart-grid {
+    transform: scale(0.3) !important;
+    transform-origin: top center !important;
+
+    margin-top: 25px !important;
+    margin-bottom: 150px !important;
+
+    flex-shrink: 0 !important;
+  }
+}
